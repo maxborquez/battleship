@@ -56,12 +56,20 @@ class Gameboard {
     const target = this.board[x][y];
 
     if (target === null) {
+      this.board[x][y] = "miss";
       this.missedAttacks.push([x, y]);
       return "Miss";
     }
 
     target.hit();
-    return target.isSunk() ? "Sunk" : "Hit";
+    this.board[x][y] = "hit";
+
+    if (target.isSunk()) {
+      this.board[x][y] = "sunk";
+      return "Sunk";
+    }
+
+    return "Hit";
   }
 
   allShipsAreSunk() {

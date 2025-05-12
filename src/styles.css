@@ -52,6 +52,7 @@ header {
   color: white;
   font-size: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 #boardsContainer {
@@ -69,21 +70,44 @@ header {
   grid-template-rows: repeat(10, 40px);
   gap: 2px;
 }
-
 .cell {
-  width: 40px;
-  height: 40px;
-  background-color: rgb(42, 47, 59);
+  width: 30px;
+  height: 30px;
   border: 1px solid #ccc;
-  transition: background-color 0.2s;
 }
 
-.cell:hover {
-  background-color: lightcoral;
+.cell.hit {
+  background-color: red;
 }
 
-.occupied {
+.cell.miss {
+  background-color: lightblue;
+}
+
+.cell.sunk {
+  background-color: darkred;
+}
+
+.cell.occupied {
   background-color: palegreen;
+}
+
+.cell.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#cpuWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#cpuBoard {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
 }
 
 #buttons {
