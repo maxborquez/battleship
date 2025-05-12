@@ -1,0 +1,117 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #181926;
+  font-family: sans-serif;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  height: 10%;
+  width: 100%;
+  background-color: #27293b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#turnDisplay {
+  font-size: 30px;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.boardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playerLabel {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#boardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+}
+
+#playerBoard,
+#cpuBoard {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 2px;
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(42, 47, 59);
+  border: 1px solid #ccc;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: lightcoral;
+}
+
+.occupied {
+  background-color: palegreen;
+}
+
+#buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+#startBtn,
+#randomize {
+  background-color: #27293b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, font-size 0.2s;
+}
+
+#startBtn:hover {
+  background-color: palegreen;
+}
+
+#startBtn:active,
+#randomize:active {
+  font-size: 21px;
+}
+
+#randomize:hover {
+  background-color: paleturquoise;
+}
