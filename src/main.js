@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Player } from "./game.js";
+import { Player } from "./gameObjects.js";
 
 const player1 = new Player("Player 1", "human");
 const cpu = new Player("Computer", "computer");
@@ -36,6 +36,8 @@ function renderCpuBoard() {
     for (let y = 0; y < 10; y++) {
       const cell = document.createElement("div");
       cell.classList.add("cell");
+      cell.dataset.x = x;
+      cell.dataset.y = y;
       cpuBoardElement.appendChild(cell);
     }
   }
@@ -59,6 +61,14 @@ startBtn.addEventListener("click", () => {
   startBtn.style.display = "none";
   cpu.board.placeAllShipsRandomly();
   renderCpuBoard();
+});
+
+cpuBoardElement.addEventListener("click", (e) => {
+  const cell = e.target;
+  if (cell.classList.contains("cell")) {
+    const x = cell.dataset.x;
+    const y = cell.dataset.y;
+  }
 });
 
 player1.board.placeAllShipsRandomly();
